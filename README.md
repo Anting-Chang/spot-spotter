@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Spot Spotter: find free parking in Montreal
+
+![image](https://user-images.githubusercontent.com/5653157/122560842-19bf8200-d00f-11eb-9302-044b60522696.png)
 
 Montreal downtown parking hard to find?
 Afraid that you cannot find a place when your friend invite you for dinner in Guy Concordia?
