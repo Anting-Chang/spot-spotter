@@ -1,0 +1,11 @@
+.pageWrapper {
+    width: calc(100vw - 150px - 30vw);
+    min-width: 300px;
+}
+
+@media screen and (max-width: 1000px) {
+    .pageWrapper {
+        /*width: 300px;*/
+        width: calc(100vw - 150px);
+    }
+}
