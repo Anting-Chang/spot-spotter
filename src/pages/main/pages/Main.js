@@ -56,7 +56,7 @@ const Main = () => {
                         if (day.num == dayFilter || day.num == 8 || day.num == includeWeekDay) {
                             day.time.map(time => {
                                 console.log(time.startHour, time.endHour)
-                                if (time.endHour > timeStartFilter && time.endHour < timeEndFilter) {
+                                if (time.endHour >= timeStartFilter && time.endHour <= timeEndFilter) {
                                     flag = true
                                 }
                             })
