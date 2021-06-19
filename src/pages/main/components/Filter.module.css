@@ -24,6 +24,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+.btnWrapper {
+    margin-top: 10px;
+}
 
 @media screen and (max-width: 1000px){
     .btnWrapper {
