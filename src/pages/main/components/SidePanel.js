@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Alert } from 'antd';
 
 import styles from './SidePanel.module.css'
@@ -14,10 +14,17 @@ const SidePanel = (props) => {
     const auth = useContext(AuthContext)
     const { isLoading, error, sendRequest, clearError } = useHttpClient()
     const [successState, setSuccessState] = useState(0)
+    const [showAds, setShowAds] = useState(true)
 
     const filterList = (filterInfo) => {
         props.onFilter(filterInfo)
     }
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowAds(false)
+        },8000)
+    }, [])
 
     const deleteSpot = async() => {
         // console.log(props.info)
@@ -43,6 +50,11 @@ const SidePanel = (props) => {
 
     return (
         <div className={styles.pageWrapper}>
+            {showAds && <div className={styles.advertisement}>
+                <a href="https://www.linkedin.com/in/chang-anting-87a619a5/" style={{textDecoration: 'underline'}}>
+                    Anting is currently looking for a FontEnd Dev job
+                </a>
+            </div>}
             <Filter onFilter={filterList} onReset={() => props.onReset()}/>
             {props.info !== null && <div>
                 <PointInfoCard loading={isLoading} info={props.info} userId={auth.userId} onDeleteSpot={deleteSpot} />
