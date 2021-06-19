@@ -46,7 +46,7 @@ const Map = (props) => {
                                 }}
                             >
                                 <Popup>
-                                    {info.lat},{info.lng}
+                                    <a href={`http://maps.google.com/?q=${info.lat},${info.lng}`}>Go to Google Map</a>
                                 </Popup>
                             </Marker>
                         )

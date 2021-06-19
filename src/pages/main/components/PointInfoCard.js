@@ -39,6 +39,10 @@ const PointInfoCard = (props) => {
                 <div>{props.info.lat},{props.info.lng}</div>
             </div>
             <div className={styles.positionWrapper}>
+                <a href={`http://maps.google.com/?q=${props.info.lat},${props.info.lng}`}>Go to Google Map</a>
+
+            </div>
+            <div className={styles.positionWrapper}>
                 {props.info.creator === props.userId && <Button type="primary" danger onClick={() => props.onDeleteSpot()}>
                     Delete
                 </Button>}
