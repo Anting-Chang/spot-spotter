@@ -5,6 +5,6 @@
 
 @media screen and (max-width: 1000px){
     .pageWrapper {
-        width: 300px;
+        width: 100vw;
     }
 }

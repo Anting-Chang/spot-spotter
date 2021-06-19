@@ -6,7 +6,9 @@
 
 @media screen and (max-width: 1000px){
     .pageWrapper {
-        width: auto;
+        width: 100vw;
         padding: 10px;
+        position: fixed;
+        z-index: 1000;
     }
 }
