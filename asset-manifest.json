@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/spot-spotter/static/css/main.be62ac05.chunk.css",
+    "main.css": "/spot-spotter/static/css/main.8c9dc3c3.chunk.css",
     "main.js": "/spot-spotter/static/js/main.0a2fd85d.chunk.js",
     "main.js.map": "/spot-spotter/static/js/main.0a2fd85d.chunk.js.map",
     "runtime-main.js": "/spot-spotter/static/js/runtime-main.aad0b6cf.js",
@@ -12,7 +12,7 @@
     "static/js/3.644a5551.chunk.js.map": "/spot-spotter/static/js/3.644a5551.chunk.js.map",
     "index.html": "/spot-spotter/index.html",
     "static/css/2.b4e56faa.chunk.css.map": "/spot-spotter/static/css/2.b4e56faa.chunk.css.map",
-    "static/css/main.be62ac05.chunk.css.map": "/spot-spotter/static/css/main.be62ac05.chunk.css.map",
+    "static/css/main.8c9dc3c3.chunk.css.map": "/spot-spotter/static/css/main.8c9dc3c3.chunk.css.map",
     "static/js/2.3a8639d5.chunk.js.LICENSE.txt": "/spot-spotter/static/js/2.3a8639d5.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/spot-spotter/static/media/logo.6ce24c58.svg"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.aad0b6cf.js",
     "static/css/2.b4e56faa.chunk.css",
     "static/js/2.3a8639d5.chunk.js",
-    "static/css/main.be62ac05.chunk.css",
+    "static/css/main.8c9dc3c3.chunk.css",
     "static/js/main.0a2fd85d.chunk.js"
   ]
 }
