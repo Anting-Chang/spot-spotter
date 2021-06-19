@@ -67,8 +67,11 @@ const Filter = (props) => {
                         )}
                     </Select>
                 </Input.Group>
-                <Button type="primary" onClick={filter} style={{marginRight: '10px'}}>Filter</Button>
-                <Button type="dark" onClick={props.onReset}>Reset</Button>
+                <div className={styles.btnWrapper}>
+                    <Button type="primary" onClick={filter} style={{marginRight: '10px'}}>Filter</Button>
+                    <Button type="dark" onClick={props.onReset}>Reset</Button>
+                </div>
+
             </div>
         </div>
     );

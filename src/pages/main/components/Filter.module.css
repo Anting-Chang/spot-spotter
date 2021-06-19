@@ -11,4 +11,11 @@
 
 .inputsWrapper {
     display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1000px){
+    .btnWrapper {
+        margin-top: 10px;
+    }
 }
