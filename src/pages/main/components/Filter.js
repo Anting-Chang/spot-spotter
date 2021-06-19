@@ -9,6 +9,7 @@ const Filter = (props) => {
     const [day, setDay] = useState(1)
     const [startHour, setStartHour] = useState(1)
     const [endHour, setEndHour] = useState(23)
+    const [showExp, setShowExp] = useState(false)
 
 
     const filter = () => {
@@ -33,7 +34,15 @@ const Filter = (props) => {
 
     return (
         <div className={styles.filterWrapper}>
-            <div className={styles.title}>Time Filter</div>
+            <div className={styles.title} onClick={() => setShowExp(prev => !prev)}>Paradoxical Time Filter</div>
+            {showExp && <div>
+                This filter is special. You need to enter your upper and lower limit time of arrival.(If you can arrive at Monday between 5pm and 6pm, then enter Mon,5pm,6pm)
+                It is going to filter all the spots that just become available in this time range.
+                If a spot has 'No parking' before 6pm, then if you arrive at 5:45pm, you will be guaranteed a spot, just
+                wait until 6pm and leave.(unless its really downtown, people park there even they are going to get a
+                ticket)
+                It's paradoxical because it filters when the spot is unusable rather than when its usable.
+            </div>}
             <div className={styles.inputsWrapper}>
                 <Input.Group compact>
                     <Select onChange={changeDay} defaultValue={1}>

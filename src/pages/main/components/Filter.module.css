@@ -9,6 +9,17 @@
     font-size: 1.5rem;
 }
 
+.title::after {
+    content: '?';
+    background-color: #9ae2ff;
+    font-size: 0.7rem;
+    padding: 0.2rem;
+    margin-left: 0.3rem;
+    border-radius: 1rem;
+    color: #fff;
+    position: absolute;
+}
+
 .inputsWrapper {
     display: flex;
     flex-wrap: wrap;
