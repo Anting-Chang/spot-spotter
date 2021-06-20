@@ -11,6 +11,7 @@ const AddPointPanel = (props) => {
     const [monthInfo, setMonthInfo] = useState({})
     const [monthArray, setMonthArray] = useState([])
     const [numSpots, setNumSpots] = useState(5)
+    const [description, setDescription] = useState('')
     const [inputError, setInputError] = useState({ifInputError: false, message: ''})
 
     useEffect(() => {
@@ -61,6 +62,10 @@ const AddPointPanel = (props) => {
         setNumSpots(e.target.value)
     }
 
+    const setDescriptionFunc = (e) => {
+        setDescription(e.target.value)
+    }
+
     const submitObj = () => {
         let emptyFlag = false
         if (monthArray.length === 0) {
@@ -78,7 +83,7 @@ const AddPointPanel = (props) => {
         if (numSpots > 0 && numSpots < 50 ) {
             setInputError({ifInputError: false, message: ''})
             reset()
-            return props.onSubmitMonth(monthArray, numSpots)
+            return props.onSubmitMonth(monthArray, numSpots, description)
         }
         setInputError({ifInputError: true, message: 'Number of Spots not valid!'})
     }
@@ -102,6 +107,9 @@ const AddPointPanel = (props) => {
                     </div>
                     <div style={{ marginBottom: 16 }}>
                         <Input addonBefore="Number of Spots" defaultValue="5" onChange={setNumSpot} />
+                    </div>
+                    <div style={{ marginBottom: 16 }}>
+                        <Input addonBefore="Description" defaultValue="" onChange={setDescriptionFunc} />
                     </div>
                     <Button type="primary" onClick={submitObj} loading={props.loading} style={{marginRight: '10px'}}>Submit</Button>
 

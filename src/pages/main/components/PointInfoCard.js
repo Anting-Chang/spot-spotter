@@ -35,6 +35,10 @@ const PointInfoCard = (props) => {
                 <div>Spots Amount :</div>
                 <div>{props.info.numSpots}</div>
             </div>
+            <div className={styles.descriptionWrapper}>
+                <div>Description :</div>
+                <div style={{wordWrap: 'break-word'}}>{props.info.description}</div>
+            </div>
             <div className={styles.positionWrapper}>
                 <div>{props.info.lat},{props.info.lng}</div>
             </div>

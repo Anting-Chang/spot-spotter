@@ -19,10 +19,11 @@ const AddPoint = () => {
         setPoint(info)
     }
 
-    const submitMonth = (value, numSpots) => {
+    const submitMonth = (value, numSpots, description) => {
         setPoint(prev => {
             prev.limit = value
             prev.numSpots = numSpots
+            prev.description = description
             // console.log('main main section',prev)
             return prev
         })
