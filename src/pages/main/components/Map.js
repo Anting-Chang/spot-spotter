@@ -11,7 +11,7 @@ const Map = (props) => {
             lat: 45.498478,
             lng: -73.567705,
         }
-    const zoom = 17
+    const zoom = 15
 
     const [currentZoom, setCurrentZoom] = useState(zoom)
     const [clickIndex,setClickIndex] = useState()
