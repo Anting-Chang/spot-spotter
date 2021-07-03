@@ -17,7 +17,7 @@ const DetailLimitInfo = (props) => {
                                     <div className={styles.timeStyle}>
                                         {day.time.map((time, index) => {
                                             return (
-                                                <div>{`${time.startHour}:${time.startMinute} to ${time.endHour}:${time.endMinute}`}</div>
+                                                <div key={index}>{`${time.startHour}:${time.startMinute} to ${time.endHour}:${time.endMinute}`}</div>
                                             )
                                         })}
                                     </div>

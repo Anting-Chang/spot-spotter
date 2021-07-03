@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from "./SimpleLimitInfo.module.css";
 import {DAY_MAP, FULL_DAY_MAP, MONTH_MAP} from "../../../../shared/util/DataMap";
 import { BsFillSlashCircleFill } from "react-icons/bs"
@@ -7,6 +7,11 @@ const SimpleLimitInfo = (props) => {
     const currentDate = new Date()
     const currentMonth = currentDate.getMonth()
     const currentDay = currentDate.getDay()
+    let ifMonthShowFlag = false
+
+    useEffect(() => {
+        props.onShowMonth(ifMonthShowFlag)
+    },[props.info])
 
     const listMonth = (month, index) => {
         const currentDate = new Date()
@@ -19,6 +24,8 @@ const SimpleLimitInfo = (props) => {
             }
         }
         if (showMonthFlag) {
+            ifMonthShowFlag = true
+            console.log('showMonthFlag reached');
             return (
                 <>
                     {month.monthStart === month.monthEnd && <div className={styles.monthWrapper}><BsFillSlashCircleFill style={{color: 'red', fontSize: '0.9rem'}}/>&nbsp;&nbsp;All Year</div>}
@@ -39,7 +46,7 @@ const SimpleLimitInfo = (props) => {
                     <div className={styles.timeStyle}>
                         {day.time.map((time, index) => {
                             return (
-                                <div>• {`${time.startHour}:${time.startMinute} to ${time.endHour}:${time.endMinute}`}</div>
+                                <div key={index}>• {`${time.startHour}:${time.startMinute} to ${time.endHour}:${time.endMinute}`}</div>
                             )
                         })}
                     </div>
@@ -54,7 +61,6 @@ const SimpleLimitInfo = (props) => {
                 return (
                     <div key={index}>
                         {listMonth(month,index)}
-
                     </div>
                 )
             })}

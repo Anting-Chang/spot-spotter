@@ -1,6 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Button } from 'antd';
-import {BsFillCaretUpFill, BsFillCaretDownFill, BsFillCursorFill, BsPlusCircleFill} from "react-icons/bs"
+import {
+    BsFillCaretUpFill,
+    BsFillCaretDownFill,
+    BsFillCursorFill,
+    BsPlusCircleFill,
+    BsFillSlashCircleFill,
+    BsGiftFill
+} from "react-icons/bs"
 
 import styles from './PointInfoCard.module.css'
 import DetailLimitInfo from "./info-components/DetailLimitInfo";
@@ -9,9 +16,15 @@ import {DAY_MAP, MONTH_MAP} from "../../../shared/util/DataMap";
 
 const PointInfoCard = (props) => {
     const [isDetailInfo, setIsDetailInfo] = useState(false)
+    const [isMonthEmpty, setIsMonthEmpty] = useState(true)
+
 
     const addTrip = () => {
         props.onAddTrip(props.info)
+    }
+
+    const determineIfMonthShown = (val) => {
+        setIsMonthEmpty(!val)
     }
 
     return (
@@ -44,7 +57,8 @@ const PointInfoCard = (props) => {
                 </div>
             </div>}
             {!isDetailInfo && <div>
-                <SimpleLimitInfo {...props}/>
+                {isMonthEmpty && <div className={styles.monthEmptyPlaceholder}><BsGiftFill style={{color: '#27c200', fontSize: '0.9rem'}}/>&nbsp;&nbsp;No Restrictions Today</div>}
+                <SimpleLimitInfo {...props} onShowMonth={determineIfMonthShown}/>
                 <div className={styles.BtnWrapper}>
                     <a href={`http://maps.google.com/?q=${props.info.lat},${props.info.lng}`}>
                         <div className={styles.BtnDirection}>
