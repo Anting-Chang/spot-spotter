@@ -56,9 +56,7 @@ const SidePanel = (props) => {
                 </a>
             </div>}
             <Filter onFilter={filterList} onReset={() => props.onReset()}/>
-            {props.info !== null && <div>
-                <PointInfoCard loading={isLoading} info={props.info} userId={auth.userId} onDeleteSpot={deleteSpot} />
-            </div>}
+            {props.info !== null && <PointInfoCard loading={isLoading} info={props.info} userId={auth.userId} onDeleteSpot={deleteSpot} />}
             {successState===1 && <Alert style={{marginTop: '10px'}} message="Successfully Deleted" type="success"/>}
             {successState===2 && <Alert style={{marginTop: '10px'}} message="Delete failed" type="danger"/>}
         </div>
