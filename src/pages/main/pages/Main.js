@@ -26,11 +26,11 @@ const Main = () => {
 
     const clickIcon = (info) => {
         setInfo(info)
-        console.log(info)
+        // console.log(info)
     }
 
     useEffect(() => {
-        console.log(filteredPointsList)
+        // console.log(filteredPointsList)
     }, [filteredPointsList])
 
     const filterList = (filterInfo) => {
@@ -43,19 +43,19 @@ const Main = () => {
         }
         const timeStartFilter = filterInfo.startHour
         const timeEndFilter = filterInfo.endHour
-        console.log('reached filterList')
+        // console.log('reached filterList')
         // console.log(filteredPointsList)
         setFilteredPointsList((unFilteredList) => {
-            console.log('reached')
+            // console.log('reached')
             let filteredList = new Array()
             let flag = false
             originPointsList.map(item => {
                 item.limit.map(month => {
                     month.day.map(day => {
-                        console.log(day)
+                        // console.log(day)
                         if (day.num == dayFilter || day.num == 8 || day.num == includeWeekDay) {
                             day.time.map(time => {
-                                console.log(time.startHour, time.endHour)
+                                // console.log(time.startHour, time.endHour)
                                 if (time.endHour >= timeStartFilter && time.endHour <= timeEndFilter) {
                                     flag = true
                                 }
@@ -63,7 +63,7 @@ const Main = () => {
                         }
                     })
                 })
-                console.log('items here',item)
+                // console.log('items here',item)
                 if (flag) filteredList.push(item)
                 flag = false
             })

@@ -52,7 +52,7 @@ const SidePanel = (props) => {
         <div className={styles.pageWrapper}>
             {showAds && <div className={styles.advertisement}>
                 <a href="https://www.linkedin.com/in/chang-anting-87a619a5/" style={{textDecoration: 'underline'}}>
-                    Anting is currently looking for a FontEnd Dev job
+                    Anting is looking for a Front End Dev Job
                 </a>
             </div>}
             <Filter onFilter={filterList} onReset={() => props.onReset()}/>

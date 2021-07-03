@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import GoogleMapReact from 'google-map-react';
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet'
 
@@ -15,6 +15,11 @@ const Map = (props) => {
 
     const [currentZoom, setCurrentZoom] = useState(zoom)
     const [clickIndex,setClickIndex] = useState()
+    const [windowHeight, setWindowHeight] = useState(100)
+
+    useEffect(() => {
+        setWindowHeight(window.innerHeight)
+    },[windowHeight])
 
     const clickMap = ({ x, y, lat, lng, event }) => {
 
@@ -31,8 +36,8 @@ const Map = (props) => {
 
     return (
         <div className={styles.pageWrapper}>
-            <div style={{ height: '100vh', width: '100%' }}>
-                <MapContainer style={{ height: '100vh', width: '100%' }} center={center} zoom={zoom} scrollWheelZoom={true}>
+            <div style={{ height: `100%`, width: '100%' }}>
+                <MapContainer style={{ height: `${window.innerHeight}px`, width: '100%' }} center={center} zoom={zoom} scrollWheelZoom={true}>
                     <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

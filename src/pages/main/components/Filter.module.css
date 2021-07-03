@@ -3,6 +3,7 @@
     padding: 1rem;
     border-radius: 0.7rem;
     box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
+    position: relative;
 }
 
 .title {
@@ -28,8 +29,59 @@
     margin-top: 10px;
 }
 
+.simpleFilterWrapper {
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.simpleFilter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.simpleReset {
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 5px 10px;
+    margin: 0 10px;
+    border-radius: 3px;
+}
+
+.simpleFilterPlusMinus {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 10px;
+    border-radius: 3px;
+    background-color: #999;
+    color: #fff;
+}
+
+.simpleFilterMiddle {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #0092c1;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.simpleExpand {
+    cursor: pointer;
+    line-height: 10px;
+    padding: 0 3rem;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #eee;
+    border-radius: 3px;
+}
+
 @media screen and (max-width: 1000px){
     .btnWrapper {
         margin-top: 10px;
     }
 }
+
