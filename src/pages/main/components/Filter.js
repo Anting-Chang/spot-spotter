@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Input, Select, Button } from 'antd';
-import { BsFillCaretDownFill, BsFillCaretUpFill } from "react-icons/bs"
+import { BsFillCaretDownFill, BsFillCaretUpFill, BsPlus, BsDash } from "react-icons/bs"
 
 import styles from './Filter.module.css'
 const { Option } = Select;
@@ -66,9 +66,9 @@ const Filter = (props) => {
                 <div>
                     <div className={styles.simpleFilterWrapper}>
                         <div className={styles.simpleFilter}>
-                            <div className={styles.simpleFilterPlusMinus} onClick={() => setFilterHour(num => num-1)}>-</div>
+                            <div className={styles.simpleFilterPlusMinus} onClick={() => setFilterHour(num => num-1)}><BsDash/></div>
                             <div className={styles.simpleFilterMiddle} onClick={simpleFilter}>Next {filterHour} Hour</div>
-                            <div className={styles.simpleFilterPlusMinus} onClick={() => setFilterHour(num => num+1)}>+</div>
+                            <div className={styles.simpleFilterPlusMinus} onClick={() => setFilterHour(num => num+1)}><BsPlus/></div>
                         </div>
                         <div className={styles.simpleReset} onClick={props.onReset}>Reset</div>
                     </div>

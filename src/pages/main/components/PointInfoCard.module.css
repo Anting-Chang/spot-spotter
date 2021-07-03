@@ -4,46 +4,17 @@
     margin-top: 2rem;
     border-radius: 0.7rem;
     box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
+    position: relative;
 }
 
 @media screen and (max-width: 1000px) {
     .infoCardWrapper {
-        height: 20vh;
-        overflow: scroll;
+        /*height: 20vh;*/
+        /*overflow: scroll;*/
         margin-top: 0.75rem;
     }
 }
 
-.dayWrapper {
-    display: flex;
-    padding: 0 1rem;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.dayTitle {
-
-    color: #3380a2;
-    font-size: 1.25rem;
-}
-
-.timeStyle {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #3380a2;
-}
-
-.monthWrapper {
-    font-size: 1.5rem;
-    color: #3380a2;
-    padding: 0.5rem 1rem;
-}
-
-.spliter {
-    height: 5px;
-    background-color: #efefef;
-}
 
 .spotsWrapper {
     color: #3380a2;
@@ -59,4 +30,46 @@
 .descriptionWrapper {
     color: #3380a2;
     padding: 0.5rem 1rem;
+}
+
+/*Btn group*/
+
+.BtnWrapper {
+    display: flex;
+    padding: 0.7rem 1rem 1rem 1rem;
+}
+
+.BtnDirection {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 1rem;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    background-color: rgb(2, 169, 230);
+    margin-right: 0.6rem;
+}
+
+.BtnAdd {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 1rem;
+    color: rgb(2, 169, 230);
+    padding: 0.3rem 0.6rem;
+    border: 1px solid rgb(2, 169, 230);
+}
+
+.simpleExpand {
+    cursor: pointer;
+    line-height: 10px;
+    padding: 0 3rem;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #eee;
+    border-radius: 3px;
 }

@@ -1,0 +1,30 @@
+.monthWrapper {
+    font-size: 1.5rem;
+    color: #3380a2;
+    padding: 0.5rem 1rem;
+}
+
+.spliter {
+    height: 5px;
+    background-color: #efefef;
+}
+
+.dayWrapper {
+    display: flex;
+    padding: 0 1rem;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.dayTitle {
+
+    color: #3380a2;
+    font-size: 1.25rem;
+}
+
+.timeStyle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #3380a2;
+}

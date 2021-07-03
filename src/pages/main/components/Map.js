@@ -4,9 +4,13 @@ import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leafl
 
 import styles from './Map.module.css'
 import MapPoint from "./MapPoint";
-
+import L from 'leaflet';
+import markerRed from '../../../assets/red-marker.svg';
+import markerBlue from '../../../assets/blue-marker.svg';
+import { redIcon, blueIcon } from "./Icon";
 
 const Map = (props) => {
+
     const center = {
             lat: 45.498478,
             lng: -73.567705,
@@ -14,8 +18,8 @@ const Map = (props) => {
     const zoom = 15
 
     const [currentZoom, setCurrentZoom] = useState(zoom)
-    const [clickIndex,setClickIndex] = useState()
-    
+    const [clickId,setClickId] = useState()
+
 
     const clickMap = ({ x, y, lat, lng, event }) => {
 
@@ -25,9 +29,16 @@ const Map = (props) => {
         setCurrentZoom(zoomLeve)
     }
 
-    const clickIcon = (info, index) => {
-        setClickIndex(index)
+    const clickIcon = (info) => {
+        setClickId(info.id)
         props.onClickIcon(info)
+    }
+
+    const getMarkerIcon = (id) => {
+        if (id === clickId) {
+            return redIcon
+        }
+        return blueIcon
     }
 
     return (
@@ -42,37 +53,17 @@ const Map = (props) => {
                     { currentZoom > 14 && props.pointsList && props.pointsList.length > 0 && props.pointsList.map((info, index) => {
                         return (
                             <Marker
+                                key={info.id}
+                                icon={getMarkerIcon(info.id)}
                                 position={{lat: info.lat, lng: info.lng}}
                                 eventHandlers={{
-                                    click: () => clickIcon(info, index),
+                                    click: () => clickIcon(info),
                                 }}
                             >
-                                <Popup>
-                                    <a href={`http://maps.google.com/?q=${info.lat},${info.lng}`}>Go to Google Map</a>
-                                </Popup>
                             </Marker>
                         )
                     })}
                 </MapContainer>
-                {/*<GoogleMapReact*/}
-                {/*    bootstrapURLKeys={{ key: `${process.env.REACT_APP_GOOGLE_KEY}`}}*/}
-                {/*    defaultCenter={center}*/}
-                {/*    defaultZoom={zoom}*/}
-                {/*    onClick={clickMap}*/}
-                {/*    onZoomAnimationEnd ={setZoom}*/}
-                {/*>*/}
-                {/*    { currentZoom > 14 && props.pointsList && props.pointsList.length > 0 && props.pointsList.map((info, index) => {*/}
-                {/*        return (<MapPoint*/}
-                {/*            lat={info.lat}*/}
-                {/*            lng={info.lng}*/}
-                {/*            info={info}*/}
-                {/*            index={index}*/}
-                {/*            clearClick={clickIndex}*/}
-                {/*            onClickIcon={clickIcon}*/}
-                {/*        />)*/}
-                {/*    })*/}
-                {/*    }*/}
-                {/*</GoogleMapReact>*/}
             </div>
         </div>
     );

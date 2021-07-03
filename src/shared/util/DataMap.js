@@ -24,3 +24,15 @@ export const DAY_MAP = {
     7: 'WeekDay',
     8: 'All Week',
 }
+
+export const FULL_DAY_MAP = {
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Tuesday',
+    3: 'Wednesday',
+    4: 'Thursday',
+    5: 'Friday',
+    6: 'Saturday',
+    7: 'Week Day',
+    8: 'All Week',
+}

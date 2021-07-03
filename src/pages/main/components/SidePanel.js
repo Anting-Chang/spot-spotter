@@ -1,11 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Alert } from 'antd';
+import {BsXCircleFill} from "react-icons/bs"
 
 import styles from './SidePanel.module.css'
 
 import Filter from "./Filter";
 import { MONTH_MAP, DAY_MAP } from "../../../shared/util/DataMap";
 import PointInfoCard from "./PointInfoCard";
+import TripsCard from "./TripsCard";
 import {AuthContext} from "../../../shared/context/auth-context";
 import {useAuth} from "../../../shared/hooks/auth-hook";
 import {useHttpClient} from "../../../shared/hooks/http-hook";
@@ -15,16 +17,12 @@ const SidePanel = (props) => {
     const { isLoading, error, sendRequest, clearError } = useHttpClient()
     const [successState, setSuccessState] = useState(0)
     const [showAds, setShowAds] = useState(true)
+    const [trips, setTrips] = useState([])
 
     const filterList = (filterInfo) => {
         props.onFilter(filterInfo)
     }
 
-    useEffect(() => {
-        setTimeout(() => {
-            setShowAds(false)
-        },8000)
-    }, [])
 
     const deleteSpot = async() => {
         // console.log(props.info)
@@ -48,15 +46,37 @@ const SidePanel = (props) => {
         }
     }
 
+    const addTrip = (info) => {
+        for (let i = 0; i < trips.length; i++) {
+            if (trips[i].id === info.id) return
+        }
+        if (trips.length >= 8) return;
+        setTrips(prev => [...prev, info])
+    }
+
+    const resetTrips = () => {
+        setTrips([])
+    }
+
+    const tripsGo = () => {
+        let googleUrl = 'https://www.google.com/maps/dir//'
+        for (let i = 0; i < trips.length; i++) {
+            googleUrl = `${googleUrl}${trips[i].lat},${trips[i].lng}/`
+        }
+        window.location.href = googleUrl;
+    }
+
     return (
         <div className={styles.pageWrapper}>
             {showAds && <div className={styles.advertisement}>
                 <a href="https://www.linkedin.com/in/chang-anting-87a619a5/" style={{textDecoration: 'underline'}}>
                     Anting is looking for a Front End Dev Job
                 </a>
+                <div onClick={() => setShowAds(false)}><BsXCircleFill style={{color: '#999'}}/></div>
             </div>}
             <Filter onFilter={filterList} onReset={() => props.onReset()}/>
-            {props.info !== null && <PointInfoCard loading={isLoading} info={props.info} userId={auth.userId} onDeleteSpot={deleteSpot} />}
+            {trips.length > 0 && <TripsCard trips={trips} onTripsGo={tripsGo} onResetTrips={resetTrips}/>}
+            {props.info !== null && <PointInfoCard loading={isLoading} info={props.info} userId={auth.userId} onAddTrip={addTrip} onDeleteSpot={deleteSpot} />}
             {successState===1 && <Alert style={{marginTop: '10px'}} message="Successfully Deleted" type="success"/>}
             {successState===2 && <Alert style={{marginTop: '10px'}} message="Delete failed" type="danger"/>}
         </div>
