@@ -42,7 +42,7 @@ const SimpleLimitInfo = (props) => {
         if ((day.num === currentDate.getDay() || day.num > 7) || (day.num > 6 && currentDate.getDay() > 0 && currentDate.getDay() < 5)) {
             return (
                 <div key={index} className={styles.dayWrapper}>
-                    <div className={styles.dayTitle}>{FULL_DAY_MAP[day.num]}&nbsp;</div>
+                    <div className={styles.dayTitle}>Today&nbsp;</div>
                     <div className={styles.timeStyle}>
                         {day.time.map((time, index) => {
                             return (

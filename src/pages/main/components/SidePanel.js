@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Alert } from 'antd';
 import {BsXCircleFill} from "react-icons/bs"
+import {SiGithub, SiLinkedin, SiGmail} from "react-icons/si"
 
 import styles from './SidePanel.module.css'
 
@@ -68,11 +69,24 @@ const SidePanel = (props) => {
 
     return (
         <div className={styles.pageWrapper}>
-            {showAds && <div className={styles.advertisement}>
-                <a href="https://www.linkedin.com/in/chang-anting-87a619a5/" style={{textDecoration: 'underline'}}>
-                    Anting is looking for a Front End Dev Job
-                </a>
-                <div onClick={() => setShowAds(false)}><BsXCircleFill style={{color: '#999'}}/></div>
+            {showAds && <div className={styles.advertisementWrapper}>
+                <div className={styles.advertisementIcon}>
+                    < a href="https://github.com/Anting-Chang/spot-spotter" target="_blank" rel="noopener noreferrer">
+                        <SiGithub style={{color: '#ff6363',fontSize: '2rem', marginRight: '10px'}}/>
+                    < /a>
+                    < a href="https://www.linkedin.com/in/chang-anting-87a619a5/" target="_blank" rel="noopener noreferrer">
+                        <SiLinkedin style={{color: '#ff6363',fontSize: '2rem', marginRight: '10px'}}/>
+                    </a>
+                    < a href="mailto:antingchang@yahoo.ca" target="_blank" rel="noopener noreferrer">
+                        <SiGmail style={{color: '#ff6363',fontSize: '2rem'}}/>
+                    </a>
+                </div>
+                <div className={styles.advertisement}>
+                    <a href="https://www.linkedin.com/in/chang-anting-87a619a5/" style={{textDecoration: 'underline'}}>
+                        Anting is looking for a Front End Dev Job. Star on Github if you like it.
+                    </a>
+                    <div onClick={() => setShowAds(false)}><BsXCircleFill style={{color: '#999'}}/></div>
+                </div >
             </div>}
             <Filter onFilter={filterList} onReset={() => props.onReset()}/>
             {trips.length > 0 && <TripsCard trips={trips} onTripsGo={tripsGo} onResetTrips={resetTrips}/>}
