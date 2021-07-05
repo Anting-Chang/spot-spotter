@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/spot-spotter/static/css/main.f3583f02.chunk.css",
-    "main.js": "/spot-spotter/static/js/main.e8c0433f.chunk.js",
-    "main.js.map": "/spot-spotter/static/js/main.e8c0433f.chunk.js.map",
-    "runtime-main.js": "/spot-spotter/static/js/runtime-main.b0413a66.js",
-    "runtime-main.js.map": "/spot-spotter/static/js/runtime-main.b0413a66.js.map",
-    "static/css/2.b4e56faa.chunk.css": "/spot-spotter/static/css/2.b4e56faa.chunk.css",
-    "static/js/2.abd8e35b.chunk.js": "/spot-spotter/static/js/2.abd8e35b.chunk.js",
-    "static/js/2.abd8e35b.chunk.js.map": "/spot-spotter/static/js/2.abd8e35b.chunk.js.map",
-    "static/js/3.d397e7a2.chunk.js": "/spot-spotter/static/js/3.d397e7a2.chunk.js",
-    "static/js/3.d397e7a2.chunk.js.map": "/spot-spotter/static/js/3.d397e7a2.chunk.js.map",
+    "main.css": "/spot-spotter/static/css/main.fced4c20.chunk.css",
+    "main.js": "/spot-spotter/static/js/main.0fd1bc6d.chunk.js",
+    "main.js.map": "/spot-spotter/static/js/main.0fd1bc6d.chunk.js.map",
+    "runtime-main.js": "/spot-spotter/static/js/runtime-main.47711318.js",
+    "runtime-main.js.map": "/spot-spotter/static/js/runtime-main.47711318.js.map",
+    "static/css/2.190a59cc.chunk.css": "/spot-spotter/static/css/2.190a59cc.chunk.css",
+    "static/js/2.511330cb.chunk.js": "/spot-spotter/static/js/2.511330cb.chunk.js",
+    "static/js/2.511330cb.chunk.js.map": "/spot-spotter/static/js/2.511330cb.chunk.js.map",
+    "static/js/3.76ae0447.chunk.js": "/spot-spotter/static/js/3.76ae0447.chunk.js",
+    "static/js/3.76ae0447.chunk.js.map": "/spot-spotter/static/js/3.76ae0447.chunk.js.map",
     "index.html": "/spot-spotter/index.html",
-    "static/css/2.b4e56faa.chunk.css.map": "/spot-spotter/static/css/2.b4e56faa.chunk.css.map",
-    "static/css/main.f3583f02.chunk.css.map": "/spot-spotter/static/css/main.f3583f02.chunk.css.map",
-    "static/js/2.abd8e35b.chunk.js.LICENSE.txt": "/spot-spotter/static/js/2.abd8e35b.chunk.js.LICENSE.txt",
+    "static/css/2.190a59cc.chunk.css.map": "/spot-spotter/static/css/2.190a59cc.chunk.css.map",
+    "static/css/main.fced4c20.chunk.css.map": "/spot-spotter/static/css/main.fced4c20.chunk.css.map",
+    "static/js/2.511330cb.chunk.js.LICENSE.txt": "/spot-spotter/static/js/2.511330cb.chunk.js.LICENSE.txt",
     "static/media/blue-marker.3ead5115.svg": "/spot-spotter/static/media/blue-marker.3ead5115.svg",
     "static/media/logo.6ce24c58.svg": "/spot-spotter/static/media/logo.6ce24c58.svg",
     "static/media/red-marker.f117c780.svg": "/spot-spotter/static/media/red-marker.f117c780.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b0413a66.js",
-    "static/css/2.b4e56faa.chunk.css",
-    "static/js/2.abd8e35b.chunk.js",
-    "static/css/main.f3583f02.chunk.css",
-    "static/js/main.e8c0433f.chunk.js"
+    "static/js/runtime-main.47711318.js",
+    "static/css/2.190a59cc.chunk.css",
+    "static/js/2.511330cb.chunk.js",
+    "static/css/main.fced4c20.chunk.css",
+    "static/js/main.0fd1bc6d.chunk.js"
   ]
 }
