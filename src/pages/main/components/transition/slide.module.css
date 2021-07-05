@@ -1,0 +1,35 @@
+
+.enter {
+    opacity: 0;
+    margin-top: 0rem;
+    height: 0rem;
+}
+
+.enterActive {
+    opacity: 1;
+    height: 3rem;
+    margin-top: 0.75rem;
+    transition: opacity 200ms ease, height 200ms ease-in-out, margin-top 200ms ease-in-out;
+}
+
+.enterDone {
+    opacity: 1;
+    margin-top: 0.75rem;
+}
+
+.exit {
+    opacity: 1;
+    margin-top: 0.75rem;
+    height: 3rem;
+}
+
+.exitActive {
+    opacity: 0;
+    height: 0;
+    margin-top: 0rem;
+    transition: opacity 200ms ease, height 200ms ease-in-out, margin-top 200ms ease-in-out;
+}
+
+.exitDone {
+    display: none;
+}

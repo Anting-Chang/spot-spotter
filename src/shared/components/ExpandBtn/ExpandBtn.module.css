@@ -1,0 +1,12 @@
+.simpleExpand {
+    cursor: pointer;
+    line-height: 10px;
+    padding: 0 3rem;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #eee;
+    border-radius: 3px;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
+}

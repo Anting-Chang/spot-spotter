@@ -1,10 +1,29 @@
 .infoCardWrapper {
+    background-color: #fff;
+    margin-top: 0.75rem;
+    border-radius: 0.7rem;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
+    position: relative;
+}
 
+.infoCard {
+    transition: height ease 0.2s;
+    overflow: hidden;
+}
+
+.infoTransition {
+    opacity: 0;
+    transition: opacity ease 3s;
+}
+
+.infoCardWrapperActive {
+    opacity: 1;
     background-color: #fff;
     margin-top: 2rem;
     border-radius: 0.7rem;
     box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
     position: relative;
+    transition: opacity 300ms linear;
 }
 
 @media screen and (max-width: 1000px) {
@@ -44,7 +63,7 @@
 
 .BtnWrapper {
     display: flex;
-    padding: 0.7rem 1rem 1rem 1rem;
+    padding: 0.3rem 1rem 1rem 1rem;
 }
 
 .BtnDirection {
@@ -80,4 +99,5 @@
     transform: translate(-50%);
     background-color: #eee;
     border-radius: 3px;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
 }

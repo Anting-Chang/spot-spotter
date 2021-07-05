@@ -1,12 +1,7 @@
 .monthWrapper {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: #333;
     padding: 0.5rem 1rem 0 1rem;
-}
-
-.spliter {
-    height: 5px;
-    background-color: #efefef;
 }
 
 .dayWrapper {
@@ -15,13 +10,19 @@
 }
 
 .dayTitle {
-
     color: #999;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
 }
 
 .timeStyle {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: normal;
+    color: #999;
+}
+
+.spotsStyle {
+    padding: 0 1rem;
+    font-size: 0.85rem;
     font-weight: normal;
     color: #999;
 }

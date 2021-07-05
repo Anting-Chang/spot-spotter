@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import { Button } from 'antd';
 import {
     BsFillCaretUpFill,
@@ -12,12 +12,28 @@ import {
 import styles from './PointInfoCard.module.css'
 import DetailLimitInfo from "./info-components/DetailLimitInfo";
 import SimpleLimitInfo from "./info-components/SimpleLimitInfo";
+import ExpandBtn from "../../../shared/components/ExpandBtn/ExpandBtn";
+import MainBtn from "../../../shared/components/Buttons/MainBtn";
+
 import {DAY_MAP, MONTH_MAP} from "../../../shared/util/DataMap";
 
 const PointInfoCard = (props) => {
     const [isDetailInfo, setIsDetailInfo] = useState(false)
     const [isMonthEmpty, setIsMonthEmpty] = useState(true)
+    const [boxHeight, setBoxHeight] = useState(0)
 
+    const detailInfoRef = useRef()
+    const simpleInfoRef = useRef()
+
+    useEffect(() => {
+        setTimeout(()=> {
+            if (isDetailInfo) {
+                setBoxHeight(detailInfoRef.current.scrollHeight)
+            } else {
+                setBoxHeight(simpleInfoRef.current.scrollHeight)
+            }
+        }, 0)
+    }, [isDetailInfo,props.info])
 
     const addTrip = () => {
         props.onAddTrip(props.info)
@@ -28,55 +44,39 @@ const PointInfoCard = (props) => {
     }
 
     return (
-        <div className={styles.infoCardWrapper}>
-            {isDetailInfo && <div>
-                <DetailLimitInfo {...props}/>
-                <div className={styles.spotsWrapper}>
-                    <div>Spots Amount :</div>
-                    <div>{props.info.numSpots}</div>
-                </div>
-                <div className={styles.descriptionWrapper}>
-                    <div>Description :</div>
-                    <div style={{wordWrap: 'break-word'}}>{props.info.description}</div>
-                </div>
-                <div className={styles.positionWrapper}>
-                    <div>{props.info.lat},{props.info.lng}</div>
-                </div>
-                <div className={styles.positionWrapper}>
-                    <a href={`http://maps.google.com/?q=${props.info.lat},${props.info.lng}`}>Go to Google Map</a>
-
-                </div>
-                <div className={styles.positionWrapper}>
-                    {props.info.creator === props.userId &&
-                    <Button type="primary" danger onClick={() => props.onDeleteSpot()}>
-                        Delete
-                    </Button>}
-                </div>
-                <div className={styles.simpleExpand} onClick={() => setIsDetailInfo(prev => !prev)}>
-                    <BsFillCaretUpFill />
-                </div>
-            </div>}
-            {!isDetailInfo && <div>
-                {isMonthEmpty && <div className={styles.monthEmptyPlaceholder}><BsGiftFill style={{color: '#27c200', fontSize: '0.9rem'}}/>&nbsp;&nbsp;No Restrictions Today</div>}
-                <SimpleLimitInfo {...props} onShowMonth={determineIfMonthShown}/>
-                <div className={styles.BtnWrapper}>
-                    <a href={`http://maps.google.com/?q=${props.info.lat},${props.info.lng}`}>
-                        <div className={styles.BtnDirection}>
-                            <BsFillCursorFill style={{fontSize: '1rem'}}/>
-                            <div>&nbsp;Direction</div>
-                        </div>
-                    </a>
-
-                    <div className={styles.BtnAdd} onClick={addTrip}>
-                        <BsPlusCircleFill style={{fontSize: '1rem'}}/>
-                        <div>&nbsp;Add To Trip</div>
+        <div className={styles.infoCardWrapper} >
+            <div className={styles.infoCard} style={{height: boxHeight}}>
+                {isDetailInfo && <div ref={detailInfoRef}
+                      style={isDetailInfo ? {opacity: '1'} : {opacity: '0'}}
+                      className={styles.infoTransition}>
+                    <DetailLimitInfo {...props} onDeleteSpot={() => props.onDeleteSpot()} onAddTrip={addTrip}/>
+                    {/*<div className={styles.simpleExpand} onClick={() => setIsDetailInfo(prev => !prev)}>*/}
+                    {/*    <BsFillCaretUpFill />*/}
+                    {/*</div>*/}
+                </div>}
+                {!isDetailInfo && <div ref={simpleInfoRef}
+                      style={isDetailInfo ? {opacity: 0} : {opacity: 1}}
+                      className={styles.infoTransition}>
+                    {isMonthEmpty && <div className={styles.monthEmptyPlaceholder}><BsGiftFill
+                        style={{color: '#27c200', fontSize: '0.9rem'}}/>&nbsp;&nbsp;No Restrictions Today</div>}
+                    <SimpleLimitInfo {...props} onShowMonth={determineIfMonthShown}/>
+                    <div className={styles.BtnWrapper}>
+                        <a href={`http://maps.google.com/?q=${props.info.lat},${props.info.lng}`}>
+                            <MainBtn solid={true}>
+                                <BsFillCursorFill style={{fontSize: '1rem'}}/>
+                                <div>&nbsp;Direction</div>
+                            </MainBtn>
+                        </a>
+                        <MainBtn style={{marginLeft: '10px'}}  solid={false} onBtnClick={addTrip}>
+                            <BsPlusCircleFill style={{fontSize: '1rem'}}/>
+                            <div>&nbsp;Add To Trip</div>
+                        </MainBtn>
                     </div>
-                </div>
-                <div className={styles.simpleExpand} onClick={() => setIsDetailInfo(prev => !prev)}>
-                    <BsFillCaretDownFill />
-                </div>
-            </div>}
+                </div>}
+            </div>
+            <ExpandBtn isDown={!isDetailInfo} onBtnClick={() => setIsDetailInfo(prev => !prev)}/>
         </div>
+
     );
 };
 

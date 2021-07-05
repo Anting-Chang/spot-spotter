@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styles from "./SimpleLimitInfo.module.css";
 import {DAY_MAP, FULL_DAY_MAP, MONTH_MAP} from "../../../../shared/util/DataMap";
 import { BsFillSlashCircleFill } from "react-icons/bs"
+import { BiCar } from "react-icons/bi"
 
 const SimpleLimitInfo = (props) => {
     const currentDate = new Date()
@@ -64,7 +65,7 @@ const SimpleLimitInfo = (props) => {
                     </div>
                 )
             })}
-            <div></div>
+            <div className={styles.spotsStyle}><BiCar/> • {props.info.numSpots} spots</div>
         </div>
     );
 };

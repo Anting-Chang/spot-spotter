@@ -3,6 +3,7 @@ import styles from "./TripsCard.module.css";
 import {BsFillCursorFill, BsPlusCircleFill} from "react-icons/bs";
 
 const TripsCard = (props) => {
+
     return (
         <div className={styles.pageWrapper}>
             <div className={styles.tripsWrapper}>

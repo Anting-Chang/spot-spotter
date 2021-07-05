@@ -1,0 +1,27 @@
+.btnSolid {
+    color: #fff;
+    background-color: rgb(2, 169, 230);
+}
+
+.btnEmpty {
+    color: rgb(2, 169, 230);
+    border: 1px solid rgb(2, 169, 230);
+}
+
+.btnBase {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.btnSmall {
+    border-radius: 0.8rem;
+    padding: 0rem 0.6rem;
+}
+
+.btnBig {
+    border-radius: 1rem;
+    padding: 0.3rem 0.6rem;
+}
