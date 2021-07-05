@@ -114,7 +114,7 @@ const SidePanel = (props) => {
                         </a>
                     </div>
                     <div className={styles.advertisement}>
-                        If you like it, please Star on Github. Anting is also looking for a Front-End Dev Job.
+                        If you like it, please Star on Github. User Guide on Github as well.
                         <div onClick={() => setShowAds(false)}><BsXCircleFill style={{color: '#999'}}/></div>
                     </div >
                 </div>

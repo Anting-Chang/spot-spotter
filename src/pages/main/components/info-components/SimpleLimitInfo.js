@@ -20,7 +20,7 @@ const SimpleLimitInfo = (props) => {
         for (let j = 0; j < month.day.length; j++ ) {
             if (month.day[j].num === currentDate.getDay() || month.day[j].num > 7) {
                 showMonthFlag = true
-            } else if (month.day[j].num === 6 && currentDate.getDay() > 0 && currentDate.getDay() < 6) {
+            } else if (month.day[j].num === 7 && currentDate.getDay() > 0 && currentDate.getDay() < 6) {
                 showMonthFlag = true
             }
         }
@@ -40,7 +40,7 @@ const SimpleLimitInfo = (props) => {
     }
 
     const listDay = (day,index) => {
-        if ((day.num === currentDate.getDay() || day.num > 7) || (day.num > 6 && currentDate.getDay() > 0 && currentDate.getDay() < 5)) {
+        if ((day.num === currentDate.getDay() || day.num > 7) || (day.num === 7 && currentDate.getDay() > 0 && currentDate.getDay() < 6)) {
             return (
                 <div key={index} className={styles.dayWrapper}>
                     <div className={styles.dayTitle}>Today&nbsp;</div>
