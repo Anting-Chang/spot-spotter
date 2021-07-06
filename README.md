@@ -2,9 +2,10 @@
 
 Website: https://anting-chang.github.io/spot-spotter/
 
-![image](https://user-images.githubusercontent.com/5653157/122560842-19bf8200-d00f-11eb-9302-044b60522696.png)
+![image](https://user-images.githubusercontent.com/5653157/124557999-23ffbf80-de08-11eb-8fa4-007516b29afd.png)
 
-<img src="https://user-images.githubusercontent.com/5653157/124368213-d5e29480-dc2c-11eb-8d44-678c1b735714.jpg" width="400">
+
+<img src="https://user-images.githubusercontent.com/5653157/124558138-4691d880-de08-11eb-8de8-fd5b34070f71.png" width="400">
 
 Montreal downtown parking hard to find?
 Afraid that you cannot find a place when your friend invite you for dinner in Guy Concordia?
