@@ -36,3 +36,13 @@ export const FULL_DAY_MAP = {
     7: 'Week Day',
     8: 'All Week',
 }
+
+export const RULE_MAP = {
+    0: 'No parking',
+    1: 'Delivery only',
+    2: '15 Min',
+    3: '30 Min',
+    4: '1 Hr',
+    5: '2 Hr',
+    6: '4 Hr',
+}

@@ -19,7 +19,6 @@ import {DAY_MAP, MONTH_MAP} from "../../../shared/util/DataMap";
 
 const PointInfoCard = (props) => {
     const [isDetailInfo, setIsDetailInfo] = useState(false)
-    const [isMonthEmpty, setIsMonthEmpty] = useState(true)
     const [boxHeight, setBoxHeight] = useState(0)
 
     const detailInfoRef = useRef()
@@ -39,10 +38,6 @@ const PointInfoCard = (props) => {
         props.onAddTrip(props.info)
     }
 
-    const determineIfMonthShown = (val) => {
-        setIsMonthEmpty(!val)
-    }
-
     return (
         <div className={styles.infoCardWrapper} >
             <div className={styles.infoCard} style={{height: boxHeight}}>
@@ -57,9 +52,8 @@ const PointInfoCard = (props) => {
                 {!isDetailInfo && <div ref={simpleInfoRef}
                       style={isDetailInfo ? {opacity: 0} : {opacity: 1}}
                       className={styles.infoTransition}>
-                    {isMonthEmpty && <div className={styles.monthEmptyPlaceholder}><BsGiftFill
-                        style={{color: '#27c200', fontSize: '0.9rem'}}/>&nbsp;&nbsp;No Restrictions Today</div>}
-                    <SimpleLimitInfo {...props} onShowMonth={determineIfMonthShown}/>
+
+                    <SimpleLimitInfo {...props}/>
                     <div className={styles.BtnWrapper}>
                         <a href={`http://maps.google.com/?q=${props.info.lat},${props.info.lng}`}>
                             <MainBtn solid={true}>

@@ -5,7 +5,7 @@
 }
 
 .dayWrapper {
-    display: flex;
+    /*display: flex;*/
     padding: 0 1rem;
 }
 
@@ -15,15 +15,29 @@
 }
 
 .timeStyle {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #777;
+    display: flex;
+    align-items: center;
+}
+
+.spotsStyle {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
     font-size: 0.85rem;
     font-weight: normal;
     color: #999;
 }
 
-.spotsStyle {
+/*if no restrictions*/
+
+.monthEmptyPlaceholder {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #777;
     padding: 0 1rem;
-    font-size: 0.85rem;
-    font-weight: normal;
-    color: #999;
 }
 

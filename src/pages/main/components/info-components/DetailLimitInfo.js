@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./DetailLimitInfo.module.css";
-import {DAY_MAP, MONTH_MAP, FULL_DAY_MAP} from "../../../../shared/util/DataMap";
+import {DAY_MAP, MONTH_MAP, FULL_DAY_MAP, RULE_MAP} from "../../../../shared/util/DataMap";
 import {BsFillCursorFill, BsFillSlashCircleFill, BsPlusCircleFill} from "react-icons/bs";
 import {BiCar, BiPencil, BiCurrentLocation, BiCopy} from "react-icons/bi";
 import {Button} from "antd";
@@ -22,9 +22,10 @@ const DetailLimitInfo = (props) => {
                             <div className={styles.iconSection}>
                                 <BsFillSlashCircleFill style={{color: 'red', fontSize: '0.9rem'}}/>
                             </div>
-                            <div>
+                            {month.monthStart === month.monthEnd && <div>All Year</div>}
+                            {month.monthStart !== month.monthEnd && <div>
                                 {MONTH_MAP[month.monthStart]} to {MONTH_MAP[month.monthEnd]}
-                            </div>
+                            </div>}
                         </div>
                         {month.day.map((day, index) => {
                             return (
@@ -35,7 +36,7 @@ const DetailLimitInfo = (props) => {
                                         <div className={styles.timeStyle}>
                                             {day.time.map((time, index) => {
                                                 return (
-                                                    <div key={index}>{`${time.startHour}:${time.startMinute} to ${time.endHour}:${time.endMinute}`}</div>
+                                                    <div key={index}>{`${time.rule > 0 ? (`${RULE_MAP[time.rule]} • `) : ''}${time.startHour}:${time.startMinute} to ${time.endHour}:${time.endMinute}`}</div>
                                                 )
                                             })}
                                         </div>
