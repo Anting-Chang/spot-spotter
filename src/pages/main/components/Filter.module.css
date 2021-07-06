@@ -52,19 +52,43 @@
     background-color: #fff;
     border: 1px solid #999;
     color: #999;
-    padding: 2px 10px;
-    margin: 0 10px;
+    padding: 0px 8px;
     border-radius: 1rem;
+    transition: background-color 0.2s ease;
+}
+.simpleReset:active {
+    background-color: #eee;
 }
 
+@media (hover: hover) {
+    .simpleReset:hover {
+        background-color: #eee;
+    }
+}
+
+
 .simpleFilterPlusMinus {
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    padding: 3px 10px 0px 10px;
+    padding: 0.2rem 0.6rem;
     border-radius: 1rem;
     background-color: #bbb;
     color: #fff;
     text-align: center;
+    transition: background-color 0.2s ease;
 }
+
+.simpleFilterPlusMinus:active {
+    background-color: #aaa;
+}
+
+@media (hover: hover) {
+    .simpleFilterPlusMinus:hover {
+        background-color: #aaa;
+    }
+}
+
 
 .simpleFilterMiddle {
     cursor: pointer;
@@ -73,6 +97,17 @@
     background-color: rgb(2, 169, 230);
     color: #fff;
     border-radius: 1.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.simpleFilterMiddle:active {
+    background-color: rgb(1, 145, 196);
+}
+
+@media (hover: hover) {
+    .simpleFilterMiddle:hover {
+        background-color: rgb(1, 145, 196);
+    }
 }
 
 .simpleExpand {

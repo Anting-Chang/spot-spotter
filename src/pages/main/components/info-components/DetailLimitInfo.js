@@ -48,21 +48,21 @@ const DetailLimitInfo = (props) => {
                     </div>
                 )
             })}
-            <div className={styles.spotsWrapper}>
+            <div className={styles.detailWrapper}>
                 <div className={styles.iconSection}>
                     <BiCar style={{color: 'rgb(2, 169, 230)', fontSize: '1.2rem'}}/>
                 </div>
                 <div>{props.info.numSpots}&nbsp;spots</div>
             </div>
             <div className={styles.spliter}/>
-            <div className={styles.descriptionWrapper}>
+            <div className={styles.detailWrapper}>
                 <div className={styles.iconSection}>
                     <BiPencil style={{color: 'rgb(2, 169, 230)', fontSize: '1.2rem'}}/>
                 </div>
                 <div style={{wordWrap: 'break-word'}}>{props.info.description ? props.info.description : 'No description'}</div>
             </div>
             <div className={styles.spliter}/>
-            <div className={styles.positionWrapper}>
+            <div className={styles.detailWrapper}>
                 <div className={styles.iconSection}>
                     <BiCurrentLocation style={{color: 'rgb(2, 169, 230)', fontSize: '1.2rem'}}/>
                 </div>

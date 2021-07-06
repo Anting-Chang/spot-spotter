@@ -1,11 +1,33 @@
 .btnSolid {
     color: #fff;
     background-color: rgb(2, 169, 230);
+    transition: background-color 0.2s ease;
+}
+
+.btnSolid:active {
+    background-color: rgb(1, 145, 196);
+}
+
+@media (hover: hover) {
+    .btnSolid:hover {
+        background-color: rgb(1, 145, 196);
+    }
 }
 
 .btnEmpty {
     color: rgb(2, 169, 230);
     border: 1px solid rgb(2, 169, 230);
+    transition: background-color 0.2s ease;
+}
+
+.btnEmpty:active {
+    background-color: rgb(217, 238, 253);
+}
+
+@media (hover: hover) {
+    .btnEmpty:hover {
+        background-color: rgb(217, 238, 253);
+    }
 }
 
 .btnBase {

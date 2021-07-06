@@ -45,34 +45,22 @@
 }
 
 /*more details section*/
-.spotsWrapper {
+.detailWrapper {
     font-size: 1rem;
     color: #999;
     padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
+    transition: background-color 0.2s ease;
 }
-
-.positionWrapper {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    color: #999;
+.detailWrapper:hover {
+    background-color: #eee;
 }
 
 .positionSection {
     display: flex;
     flex: 1;
     justify-content: space-between;
-}
-
-.descriptionWrapper {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    color: #999;
-    padding: 0.5rem 1rem;
 }
 
 .BtnWrapper {
