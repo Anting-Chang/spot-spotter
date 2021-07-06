@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/spot-spotter/static/css/main.fced4c20.chunk.css",
-    "main.js": "/spot-spotter/static/js/main.a3221a27.chunk.js",
-    "main.js.map": "/spot-spotter/static/js/main.a3221a27.chunk.js.map",
+    "main.css": "/spot-spotter/static/css/main.149187c5.chunk.css",
+    "main.js": "/spot-spotter/static/js/main.32ab222b.chunk.js",
+    "main.js.map": "/spot-spotter/static/js/main.32ab222b.chunk.js.map",
     "runtime-main.js": "/spot-spotter/static/js/runtime-main.47711318.js",
     "runtime-main.js.map": "/spot-spotter/static/js/runtime-main.47711318.js.map",
     "static/css/2.190a59cc.chunk.css": "/spot-spotter/static/css/2.190a59cc.chunk.css",
-    "static/js/2.511330cb.chunk.js": "/spot-spotter/static/js/2.511330cb.chunk.js",
-    "static/js/2.511330cb.chunk.js.map": "/spot-spotter/static/js/2.511330cb.chunk.js.map",
+    "static/js/2.ff40704a.chunk.js": "/spot-spotter/static/js/2.ff40704a.chunk.js",
+    "static/js/2.ff40704a.chunk.js.map": "/spot-spotter/static/js/2.ff40704a.chunk.js.map",
     "static/js/3.76ae0447.chunk.js": "/spot-spotter/static/js/3.76ae0447.chunk.js",
     "static/js/3.76ae0447.chunk.js.map": "/spot-spotter/static/js/3.76ae0447.chunk.js.map",
     "index.html": "/spot-spotter/index.html",
     "static/css/2.190a59cc.chunk.css.map": "/spot-spotter/static/css/2.190a59cc.chunk.css.map",
-    "static/css/main.fced4c20.chunk.css.map": "/spot-spotter/static/css/main.fced4c20.chunk.css.map",
-    "static/js/2.511330cb.chunk.js.LICENSE.txt": "/spot-spotter/static/js/2.511330cb.chunk.js.LICENSE.txt",
+    "static/css/main.149187c5.chunk.css.map": "/spot-spotter/static/css/main.149187c5.chunk.css.map",
+    "static/js/2.ff40704a.chunk.js.LICENSE.txt": "/spot-spotter/static/js/2.ff40704a.chunk.js.LICENSE.txt",
     "static/media/blue-marker.3ead5115.svg": "/spot-spotter/static/media/blue-marker.3ead5115.svg",
     "static/media/logo.6ce24c58.svg": "/spot-spotter/static/media/logo.6ce24c58.svg",
     "static/media/red-marker.f117c780.svg": "/spot-spotter/static/media/red-marker.f117c780.svg"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.47711318.js",
     "static/css/2.190a59cc.chunk.css",
-    "static/js/2.511330cb.chunk.js",
-    "static/css/main.fced4c20.chunk.css",
-    "static/js/main.a3221a27.chunk.js"
+    "static/js/2.ff40704a.chunk.js",
+    "static/css/main.149187c5.chunk.css",
+    "static/js/main.32ab222b.chunk.js"
   ]
 }
